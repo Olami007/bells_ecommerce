@@ -1,20 +1,27 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const Carousel = () => {
   let imgStyle = {
     height: "0500px",
   };
 
-  const imgs = useMemo(
-    () => [
-      "./images/a.jpg",
-      "./images/b.jpg",
-      "./images/c.jpg",
-      "./images/d.jpg",
-      "./images/e.jpg",
-    ],
-    []
-  );
+  // const imgs = useMemo(
+  //   () => [
+  //     "./images/a.jpg",
+  //     "./images/b.jpg",
+  //     "./images/c.jpg",
+  //     "./images/d.jpg",
+  //     "./images/e.jpg",
+  //   ],
+  //   []
+  // );
+  const imgs = [
+    "/images/a.jpg",
+    "/images/b.jpg",
+    "/images/c.jpg",
+    "/images/d.jpg",
+    "/images/e.jpg",
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,7 +31,7 @@ const Carousel = () => {
     }, 3000);
 
     return () => clearInterval(carouselInterval);
-  }, [imgs, currentIndex]);
+  }, [imgs.length, currentIndex]);
 
   return (
     <>
@@ -32,7 +39,7 @@ const Carousel = () => {
         <img
           src={imgs[currentIndex]}
           alt="carousel item"
-          className="img-fluid"
+          className="img-fluid "
           style={imgStyle}
         />
       </section>
