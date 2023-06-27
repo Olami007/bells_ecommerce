@@ -9,6 +9,7 @@ import VerificationPage from "../pages/VerificationPage";
 import UnauthorizedPage from "../pages/UnauthorizedPage";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
+// import { CheckoutForm } from "../pages/Stripe";
 
 let user = localStorage.getItem("user");
 export const router = createBrowserRouter([
@@ -37,4 +38,5 @@ export const router = createBrowserRouter([
   { path: "/verification", element: <VerificationPage /> },
   { path: "/cart", element: <Cart /> },
   { path: "/checkout", element: <Checkout /> },
+  // { path: "/stripe", element: <CheckoutForm /> },
 ]);

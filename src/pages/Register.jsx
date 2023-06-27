@@ -237,7 +237,7 @@ const Register = () => {
               <label htmlFor="">Password</label>
               <input
                 onInput={handleChange}
-                type="text"
+                type="password"
                 name="password"
                 onKeyUp={(el) => {
                   el.target.value
@@ -277,7 +277,7 @@ const Register = () => {
               <label htmlFor="">Confirm Password</label>
               <input
                 onInput={handleChange}
-                type="text"
+                type="password"
                 name="confirm_password"
                 className="form-control"
               />
