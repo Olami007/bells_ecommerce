@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { publicRequest } from "../services/request";
 
 const Login = () => {
   let [form, setForm] = useState({});
@@ -32,7 +33,9 @@ const Login = () => {
     try {
       axios.defaults.headers.post["Content-Type"] =
         "application/x-www-form-urlencoded";
-      let res = await axios.post("http://127.0.0.1:4100/auth/login", form);
+
+      const publicReq = publicRequest();
+      let res = await publicReq.post("/auth/login", form);
       console.log(res.data);
       setMessage(res.data.message);
 

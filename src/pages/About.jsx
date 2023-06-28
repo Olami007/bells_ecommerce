@@ -4,6 +4,24 @@ import Footer from "../components/Footer";
 import "animate.css";
 
 const About = () => {
+  // const [cardBg, setCardBg] = useState({
+  //   backgroundColor: "white",
+  // });
+
+  // let x = document.getElementById("root");
+  // useEffect(() => {
+  //   if (x.classList.contains("night")) {
+  //     setCardBg({
+  //       backgroundColor: "black",
+  //       color: "white",
+  //     });
+  //   } else {
+  //     setCardBg({
+  //       backgroundColor: "white",
+  //     });
+  //   }
+  // }, [x]);
+
   return (
     <>
       <Navbar />
@@ -47,8 +65,8 @@ const About = () => {
           </div>
           <div className="col-lg-6">
             <img
-              src="./images/cart.png"
-              alt="About Me"
+              src="https://i.postimg.cc/26gvd3tw/cart.png"
+              alt="Bells Cart"
               className="img-fluid rounded animate__heartBeat"
             />
           </div>
@@ -56,7 +74,7 @@ const About = () => {
         <div className="row mt-4">
           <div className="col-lg-12">
             <h4 className="text-center">Why Choose BELLS?</h4>
-            <ol className="list-group">
+            <ol className="list-group ">
               <li className="list-group-item">
                 Easy-to-Use Interface: We have designed our website with
                 user-friendliness in mind, ensuring that even those new to

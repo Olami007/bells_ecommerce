@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Carousel = () => {
   let imgStyle = {
-    height: "0500px",
+    height: "500px",
   };
 
   // const imgs = useMemo(
@@ -16,12 +16,19 @@ const Carousel = () => {
   //   []
   // );
   const imgs = [
-    "/images/a.jpg",
-    "/images/b.jpg",
-    "/images/c.jpg",
-    "/images/d.jpg",
-    "/images/e.jpg",
+    "https://i.postimg.cc/9QBd3m4m/a.jpg",
+    "https://i.postimg.cc/hPLxxD1L/b.jpg",
+    "https://i.postimg.cc/9Xqymt4N/c.jpg",
+    "https://i.postimg.cc/MpzBmC9h/d.jpg",
+    "https://i.postimg.cc/gkF8nX8c/e.jpg",
   ];
+  // const imgs = [
+  //   "/images/a.jpg",
+  //   "/images/b.jpg",
+  //   "/images/c.jpg",
+  //   "/images/d.jpg",
+  //   "/images/e.jpg",
+  // ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

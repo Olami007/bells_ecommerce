@@ -1,7 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useRef } from "react";
 
 import { useNavigate } from "react-router-dom";
+import { publicRequest } from "../services/request";
 
 const VerificationPage = () => {
   const inputRef = useRef();
@@ -23,7 +24,9 @@ const VerificationPage = () => {
   const verify = async () => {
     setSubmitted(true);
     try {
-      let res = await axios.post("http://127.0.0.1:4100/auth/verification", {
+      const publicReq = publicRequest();
+
+      let res = await publicReq.post("/auth/verification", {
         code: verificationCode,
         mail: mail,
       });

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { publicRequest } from "../services/request";
 
 const Register = () => {
   const [form, setForm] = useState();
@@ -84,7 +85,9 @@ const Register = () => {
     try {
       axios.defaults.headers.post["Content-Type"] =
         "application/x-www-form-urlencoded";
-      let res = await axios.post("http://127.0.0.1:4100/auth/register", form);
+
+      const publicReq = publicRequest();
+      let res = await publicReq.post("/auth/register", form);
       console.log(res.data);
       setMessage(res.data.message);
       if (res.data.status === "ok") {

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import store from "store";
+import { publicRequest } from "../services/request";
 
 const ProductPreview = () => {
   const { productid } = useParams();
@@ -13,15 +14,23 @@ const ProductPreview = () => {
   // const [cartItems, setCartItems] = useState("");
 
   useEffect(() => {
-    try {
-      fetch(`http://127.0.0.1:4100/eachProduct/${productid}`)
-        .then((res) => res.json())
-        .then((json) => {
-          setProduct(json.products);
-        });
-    } catch (error) {
-      console.log(error);
+    async function getProduct() {
+      try {
+        // fetch(`http://127.0.0.1:4100/eachProduct/${productid}`)
+        //   .then((res) => res.json())
+        //   .then((json) => {
+        //     setProduct(json.products);
+        // });
+        const publicReq = publicRequest();
+
+        let res = await publicReq.get(`/eachProduct/${productid}`);
+
+        setProduct(res.data.products);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    getProduct();
   }, [productid]);
   // console.log(Product);
 
@@ -36,12 +45,6 @@ const ProductPreview = () => {
       prevIndex === 0 ? Product.images.length - 1 : prevIndex - 1
     );
   };
-
-  // const handleAddToCart = () => {
-  //   const cart = store.get("cart") || [];
-  //   cart.push(Product);
-  //   store.set("cart", cart);
-  // };
 
   const handleAddToCart = () => {
     const cart = store.get("cart") || [];

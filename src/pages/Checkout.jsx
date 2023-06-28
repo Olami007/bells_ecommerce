@@ -25,7 +25,7 @@ const Checkout = () => {
       price: 0,
     };
 
-    cart.forEach((item) => {
+    cart?.forEach((item) => {
       total.quantity += item.quantity;
       total.price += item.price * item.quantity;
     });
@@ -46,7 +46,7 @@ const Checkout = () => {
             <div className="card p-4">
               <h4>Order Summary</h4>
               <ul className="list-group">
-                {cart.map((item, index) => (
+                {cart?.map((item, index) => (
                   <li key={index} className="list-group-item">
                     <div className="d-flex justify-content-between">
                       <div>

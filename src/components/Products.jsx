@@ -7,7 +7,18 @@ import { publicRequest } from "../services/request";
 const Products = () => {
   const [Product, setProduct] = useState([]);
   const [selectedOption, setSelectedOption] = useState("smartphones");
+  const [cardBg, setCardBg] = useState({
+    backgroundColor: "white",
+  });
+
   useEffect(() => {
+    let x = document.getElementById("root");
+    if (x.classList.contains("night")) {
+      setCardBg({
+        backgroundColor: "black",
+      });
+    }
+
     async function getProduct() {
       try {
         // fetch("http://127.0.0.1:4100/products")
@@ -15,7 +26,8 @@ const Products = () => {
         //   .then((json) => {
         //     setProduct(json.products);
         //   });
-        const response = await publicRequest.get("/products");
+        const publicReq = publicRequest();
+        const response = await publicReq.get("/products");
 
         setProduct(response.data);
       } catch (error) {
@@ -35,7 +47,8 @@ const Products = () => {
     e.preventDefault();
 
     try {
-      const response = await publicRequest.post("/category", {
+      const publicReq = publicRequest();
+      const response = await publicReq.post("/category", {
         category: selectedOption,
       });
       setProduct(response.data.products);
@@ -86,8 +99,8 @@ const Products = () => {
       <div className="product-container pb-5">
         {Product?.length > 0 &&
           Product?.map((product, i) => (
-            <div key={i} className="card product">
-              <Link to={`/${product._id}`}>
+            <div key={i} className="card product" style={cardBg}>
+              <Link to={`product/${product._id}`}>
                 <img src={product.images[0]} alt="" />
                 <p>
                   <b>{product.title}</b>

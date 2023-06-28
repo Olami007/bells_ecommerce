@@ -18,13 +18,20 @@ const Footer = () => {
               <Link to="/" className="text-light">
                 <h1>BELLS</h1>
               </Link>
-              <img src="./images/payment.png" alt="payment" id="paymentLogo" />
+              <img
+                src="https://i.postimg.cc/6Q5dtkRd/payment.png"
+                alt="payment"
+                id="paymentLogo"
+              />
               <div className="social-links">
                 <Link
-                  to="https://www.twitter.com/olami007"
+                  to="https://github.com/Olami007"
                   className="fa-brands fa-github"
                 ></Link>
-                <Link className="fa-brands fa-youtube"></Link>
+                <Link
+                  to="https://www.youtube.com/channel/UC78la7YXaBP09wlaJ0jJYtA"
+                  className="fa-brands fa-youtube"
+                ></Link>
                 <Link
                   to="https://www.twitter.com/olami_bells"
                   className="fa-brands fa-twitter"
