@@ -88,7 +88,7 @@ const Register = () => {
 
       const publicReq = publicRequest();
       let res = await publicReq.post("/auth/register", form);
-      console.log(res.data);
+      // console.log(res.data);
       setMessage(res.data.message);
       if (res.data.status === "ok") {
         localStorage.setItem("email", form.email);

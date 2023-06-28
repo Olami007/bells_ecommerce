@@ -32,7 +32,8 @@ const VerificationPage = () => {
       });
       setCode(verificationCode);
 
-      console.log(res.data, verificationCode);
+      console.log(res.data);
+      // console.log(verificationCode);
 
       setDisplay({ display: "block" });
       setDisp({ display: "none" });

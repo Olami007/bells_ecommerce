@@ -16,11 +16,11 @@ const Dashboard = () => {
       const userRequest = UserRequest();
 
       const res = await userRequest.get("/user");
-      console.log(res.data);
+      // console.log(res.data);
       setUserFullName(`${res.data.user.first_name} ${res.data.user.last_name}`);
       setUser(res.data.user);
     } catch (error) {
-      console.log(error, "it meee");
+      console.log(error);
     }
   };
 

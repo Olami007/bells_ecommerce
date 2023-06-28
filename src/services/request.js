@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const Base_url = "http://127.0.0.1:4100/";
+// Local machine base url
+// const Base_url = "http://127.0.0.1:4100/";
+
+// Railway base url
+const Base_url = "https://bells-ecommerce-server.up.railway.app/";
 
 export const publicRequest = () => {
   return axios.create({

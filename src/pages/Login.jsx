@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   const uploadToServer = async () => {
-    console.log("submit");
+    
     try {
       axios.defaults.headers.post["Content-Type"] =
         "application/x-www-form-urlencoded";
@@ -38,8 +38,8 @@ const Login = () => {
       const publicReq = publicRequest();
 
       let res = await publicReq.post("/auth/login", form);
-      console.log(res);
-      console.log(res.data);
+      // console.log(res);
+      // console.log(res.data);
       setMessage(res.data.message);
 
       if (res.data.status === "ok") {
@@ -52,7 +52,7 @@ const Login = () => {
         }
       }
     } catch (error) {
-      console.log(error.response.data.message);
+      // console.log(error.response.data.message);
       setMessage(error.response.data.message);
     }
   };
@@ -70,7 +70,7 @@ const Login = () => {
         newerror[e.path] = e.message;
         setValidationError(newerror);
       });
-      console.log(newerror);
+      // console.log(newerror);
     }
   };
   return (
