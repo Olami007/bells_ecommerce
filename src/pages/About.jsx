@@ -4,24 +4,6 @@ import Footer from "../components/Footer";
 import "animate.css";
 
 const About = () => {
-  // const [cardBg, setCardBg] = useState({
-  //   backgroundColor: "white",
-  // });
-
-  // let x = document.getElementById("root");
-  // useEffect(() => {
-  //   if (x.classList.contains("night")) {
-  //     setCardBg({
-  //       backgroundColor: "black",
-  //       color: "white",
-  //     });
-  //   } else {
-  //     setCardBg({
-  //       backgroundColor: "white",
-  //     });
-  //   }
-  // }, [x]);
-
   return (
     <>
       <Navbar />

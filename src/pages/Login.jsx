@@ -30,12 +30,15 @@ const Login = () => {
   };
 
   const uploadToServer = async () => {
+    console.log("submit");
     try {
       axios.defaults.headers.post["Content-Type"] =
         "application/x-www-form-urlencoded";
 
       const publicReq = publicRequest();
+
       let res = await publicReq.post("/auth/login", form);
+      console.log(res);
       console.log(res.data);
       setMessage(res.data.message);
 
@@ -77,7 +80,7 @@ const Login = () => {
       <div className="container-fluid bg-light p-5 vw-50">
         <div className="card p-5 bg-primary">
           {message !== "" && (
-            <div className="alert">
+            <div className="text-center alert alert-danger">
               <strong>{message}</strong>
             </div>
           )}
